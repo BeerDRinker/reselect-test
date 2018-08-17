@@ -1,9 +1,12 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 import { connect } from 'react-redux'
 import { loadUsers } from '../../actions/users'
+import genderFilter from '../../selectors/gender'
 
+import './index.css'
 import User from './components/user'
+import Loading from '../../components/Loading'
 
 class UserList extends Component {
 
@@ -13,17 +16,22 @@ class UserList extends Component {
 
   render() {
     return (
-      <Fragment>
+      this.props.loading
+      ?
+      <Loading />
+      :
+      <ul className="user-list">
         {
           this.props.users.map((user, index) => <User key={index} user={user} />)
         }
-      </Fragment>
+      </ul>
     );
   }
 }
 
 const mapStateToProps = (state) => ({
-  users: state.users.users,
+  users: genderFilter(state),
+  loading: state.users.loading
 })
 
 const mapDispatchToProps = (dispatch) => ({

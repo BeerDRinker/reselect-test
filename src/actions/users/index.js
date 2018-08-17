@@ -17,3 +17,10 @@ export const loadtUsersError = (error) => ({
 export const loadUsers = () => ({
   type: ActionsTypes.LOAD_USERS
 })
+
+export const setUserFilter = (keyWord) => {
+  return {
+  type: ActionsTypes.SET_USER_FILTER,
+  keyWord
+  }
+}

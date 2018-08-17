@@ -3,7 +3,8 @@ import * as ActionsTypes from '../../actions/users/types'
 const initialState = {
   loading: false,
   users: [],
-  error: ''
+  error: '',
+  filterKeyWord: 'clear'
 }
 
 const users = (state = initialState, action) => {
@@ -17,6 +18,9 @@ const users = (state = initialState, action) => {
 
     case ActionsTypes.LOAD_USERS_FAILURE:
       return { ...state, loading: false, error: action.error }
+
+    case ActionsTypes.SET_USER_FILTER:
+      return { ...state, filterKeyWord: action.keyWord }
 
     default:
       return state

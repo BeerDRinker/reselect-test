@@ -1,0 +1,31 @@
+.user-list-item {
+  list-style: none;
+  padding: 10px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.user-rapper {
+  display: flex;
+}
+
+.user-image {
+  height: 72px;
+  padding: 10px;
+}
+
+.user-details {
+  margin-left: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-details p {
+  margin: 5px 0;
+}
+
+.user-name {
+  margin-top: 0;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
